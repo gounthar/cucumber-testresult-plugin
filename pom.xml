@@ -29,7 +29,7 @@
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>3.2</version>
+		<version>4.51</version>
 		<relativePath />
 	</parent>
 
@@ -45,8 +45,7 @@
 	<inceptionYear>2013</inceptionYear>
 
 	<properties>
-		<jenkins.version>1.651</jenkins.version>
-                <java.level>7</java.level>
+		<jenkins.version>2.346.3</jenkins.version>
 	</properties>
 
 	<developers>
@@ -70,12 +69,22 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.jenkins.tools.bom</groupId>
+				<artifactId>bom-weekly</artifactId>
+				<version>2612.v3d6a_2128c0ef</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>junit</artifactId>
-			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jenkins-ci.plugins.workflow</groupId>
@@ -93,13 +102,11 @@
 		<dependency>
 			<groupId>org.jenkins-ci.plugins.workflow</groupId>
 			<artifactId>workflow-step-api</artifactId>
-			<version>2.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>matrix-project</artifactId>
-			<version>1.4</version>
 			<!-- TODO - this should be split out to different classes and made optional if possible -->
 		</dependency>
 		<dependency>
@@ -116,7 +123,6 @@
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>structs</artifactId>
-			<version>1.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
@@ -133,13 +139,11 @@
                 <dependency>
                     <groupId>org.jenkins-ci.plugins</groupId>
                     <artifactId>scm-api</artifactId>
-                    <version>1.2</version>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.jenkins-ci.plugins</groupId>
                     <artifactId>credentials</artifactId>
-                    <version>1.18</version>
                     <scope>test</scope>
                 </dependency>
         </dependencies>
